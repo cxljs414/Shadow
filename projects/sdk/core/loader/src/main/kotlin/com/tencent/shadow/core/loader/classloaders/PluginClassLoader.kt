@@ -63,7 +63,7 @@ class PluginClassLoader(
         allHostWhiteTrie.insert("org.apache.commons.logging")
 
         //Android 9.0以下的系统里面带有http包，走系统的不走本地的
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.P) {
             allHostWhiteTrie.insert("org.apache.http")
             allHostWhiteTrie.insert("org.apache.http.**")
         }
